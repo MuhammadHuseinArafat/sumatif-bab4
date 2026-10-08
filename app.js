@@ -24,7 +24,7 @@ const questions = [
 const essays = [
   "Sistem dan Interaksi: Jelaskan perbedaan utama GUI (Graphical User Interface) dan CLI (Command Line User Interface). Berikan satu keunggulan spesifik dari masing-masing antarmuka dalam konteks interaksi manusia dan komputer.",
   "Analisis Siklus Mesin: Jelaskan secara rinci empat tahapan proses kerja CPU (Fetch, Decode, Execute, Store).",
-  "Analisis Cara Kerja Komputer: Diberikan program 3 × 8 + 9. Buatlah tabel sederhana Mr. Algo untuk menyelesaikan operasi program tersebut.",
+  "Analisis Cara Kerja Komputer: Diberikan program 3 × 10 + 9. Buatlah tabel sederhana Mr. Algo untuk menyelesaikan operasi program tersebut.",
   "Perbandingan Penyimpanan: RAM (Primary Storage) dan Hard Drive/SSD (Secondary Storage) memegang peran vital dalam arsitektur Von Neumann. Jelaskan dua perbedaan paling krusial berdasarkan sifat penyimpanan dan peran masing-masing dalam mendukung kerja CPU.",
   "Sintesis Konsep Multitasking: Jelaskan mengapa multitasking merupakan masalah utama yang harus dipecahkan OS. Hubungkan bagaimana Round Robin membantu menciptakan ilusi bahwa satu CPU dapat mengerjakan musik, browsing, dan game secara bersamaan."
 ];
