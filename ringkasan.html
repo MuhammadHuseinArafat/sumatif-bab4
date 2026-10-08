@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5ef">
+  <title>Ringkasan Materi | Sistem Komputer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      if (localStorage.getItem("ruang-ujian-theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ringkasan.css">
+  <script src="ringkasan.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Lewati ke ringkasan</a>
+  <div class="page-shell summary-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Kembali ke Ruang Ujian">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>RUANG<span class="brand-light">BELAJAR</span></span>
+      </a>
+      <div class="topbar-actions summary-actions">
+        <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Kembali ke login</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Aktifkan mode gelap" title="Aktifkan mode gelap">
+          <span class="theme-switch-track" aria-hidden="true"><span></span></span>
+          <span>Tema gelap</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="summary-main" id="main-content" tabindex="-1">
+      <section class="summary-hero" aria-labelledby="summary-title">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> INFORMATIKA · BAB 4</p>
+          <h1 id="summary-title">Sistem <span>Komputer.</span></h1>
+          <p class="summary-lede">Peta ringkas komponen, siklus CPU, sistem operasi, dan cara komputer menangani banyak proses.</p>
+        </div>
+        <button class="print-button" id="print-summary" type="button"><span aria-hidden="true">▤</span> Cetak ringkasan</button>
+      </section>
+
+      <nav class="summary-nav" aria-label="Daftar topik ringkasan">
+        <a href="#analogi">Analogi dapur</a>
+        <a href="#arsitektur">Von Neumann</a>
+        <a href="#siklus">Siklus CPU</a>
+        <a href="#mr-algo">Mr. Algo</a>
+        <a href="#sistem-operasi">Sistem operasi</a>
+        <a href="#multitasking">Round Robin</a>
+        <a href="#penyimpanan">RAM &amp; storage</a>
+        <a href="#kolaborasi">Kolaborasi</a>
+        <a href="#tips-essay">Tips esai</a>
+      </nav>
+
+      <div class="summary-content">
+        <section class="study-section" id="analogi" aria-labelledby="analogi-title">
+          <div class="section-kicker"><span>01</span><span>GAMBARAN BESAR</span></div>
+          <div class="section-title-row"><h2 id="analogi-title">Koki di dapur yang canggih</h2><span class="section-tag">KOMPONEN KOMPUTER</span></div>
+          <p class="section-intro">Bayangkan komputer sebagai dapur: tiap komponen punya tugas agar pesanan dapat diproses dan disajikan.</p>
+          <div class="table-wrap"><table><thead><tr><th scope="col">Komponen</th><th scope="col">Analogi dapur</th><th scope="col">Fungsi</th></tr></thead><tbody>
+            <tr><th scope="row">CPU</th><td>Koki</td><td>Memproses instruksi dan mengendalikan pekerjaan komputer.</td></tr>
+            <tr><th scope="row">RAM <span class="term-note">Primary</span></th><td>Meja kerja</td><td>Tempat data dan instruksi yang sedang dipakai; sementara dan cepat.</td></tr>
+            <tr><th scope="row">Hard drive / SSD <span class="term-note">Secondary</span></th><td>Kulkas atau gudang</td><td>Menyimpan data jangka panjang; data tetap ada saat komputer mati.</td></tr>
+            <tr><th scope="row">Input device</th><td>Pelayan penerima pesanan</td><td>Memasukkan data: keyboard, mouse, scanner, microphone, webcam, dan touchpad.</td></tr>
+            <tr><th scope="row">Output device</th><td>Pelayan penyaji hidangan</td><td>Menyajikan hasil, misalnya melalui monitor atau printer.</td></tr>
+            <tr><th scope="row">Bus</th><td>Lorong penghubung</td><td>Jalur perpindahan data di antara komponen.</td></tr>
+          </tbody></table></div>
+          <aside class="insight-note"><span class="note-mark" aria-hidden="true">i</span><p><strong>Jika RAM terlalu kecil</strong>, CPU lebih sering bolak-balik ke storage untuk mengambil dan menyimpan data. Karena storage lebih lambat, kerja komputer terasa melambat.</p></aside>
+        </section>
+
+        <section class="study-section" id="arsitektur" aria-labelledby="arsitektur-title">
+          <div class="section-kicker"><span>02</span><span>STRUKTUR KOMPUTER</span></div>
+          <div class="section-title-row"><h2 id="arsitektur-title">Arsitektur Von Neumann</h2><span class="section-tag">STORED-PROGRAM</span></div>
+          <p class="section-intro">Arsitektur ini terdiri dari CPU, Memory Unit, Input Device, Output Device, dan Buses. Dalam konsep <strong>Stored-Program</strong>, instruksi program disimpan di memori bersama data.</p>
+          <div class="component-grid">
+            <article class="component-item"><span class="component-code">CU</span><div><h3>Control Unit</h3><p>Mengatur jalannya instruksi dan menerjemahkan instruksi sesuai Instruction Set CPU. CU juga menerjemahkan alamat simbolis ke lokasi memori dan mengirim sinyal kendali.</p></div></article>
+            <article class="component-item"><span class="component-code">ALU</span><div><h3>Arithmetic and Logic Unit</h3><p>Menjalankan operasi aritmatika dan logika. Untuk membandingkan X dan Y, ALU menghitung X − Y lalu memeriksa apakah hasilnya 0.</p></div></article>
+            <article class="component-item"><span class="component-code">REG</span><div><h3>Register</h3><p>Ruang kerja sementara yang sangat dekat dengan CPU untuk menyimpan data atau instruksi yang sedang diproses.</p></div></article>
+            <article class="component-item"><span class="component-code">SET</span><div><h3>Instruction Set</h3><p>Kumpulan instruksi yang dipahami CPU. Kumpulan ini dapat berbeda bergantung pada jenis atau merek CPU.</p></div></article>
+          </div>
+          <aside class="insight-note"><span class="note-mark" aria-hidden="true">i</span><p><strong>Microcontroller sederhana</strong> untuk tugas tombol → lampu: bus adalah komponen yang paling tidak signifikan dibanding komponen lain karena pertukaran datanya sangat minimal.</p></aside>
+        </section>
+
+        <section class="study-section" id="siklus" aria-labelledby="siklus-title">
+          <div class="section-kicker"><span>03</span><span>URUTAN KERJA CPU</span></div>
+          <div class="section-title-row"><h2 id="siklus-title">Siklus mesin</h2><span class="section-tag">WAKTU-I → WAKTU-E</span></div>
+          <p class="section-intro">CPU mengambil instruksi dan memahami perintahnya sebelum menjalankan operasi.</p>
+          <div class="cycle-band"><div><span>WAKTU-I · INSTRUKSI</span><strong>Fetch <i>→</i> Decode</strong></div><span class="cycle-divider" aria-hidden="true">›</span><div><span>WAKTU-E · EKSEKUSI</span><strong>Execute <i>→</i> Store</strong></div></div>
+          <div class="table-wrap"><table><thead><tr><th scope="col">Tahap</th><th scope="col">Apa yang terjadi?</th><th scope="col">Komponen yang berperan</th></tr></thead><tbody>
+            <tr><th scope="row">Fetch</th><td>Mengambil instruksi dari memori.</td><td>Memory Unit / RAM dan CPU.</td></tr>
+            <tr><th scope="row">Decode</th><td>Menerjemahkan instruksi agar CPU mengetahui operasi yang diminta.</td><td>Control Unit (CU).</td></tr>
+            <tr><th scope="row">Execute</th><td>Menjalankan operasi, misalnya perhitungan atau logika.</td><td>ALU atau unit CPU terkait.</td></tr>
+            <tr><th scope="row">Store</th><td>Menyimpan hasil ke register atau memori.</td><td>Register / Memory Unit.</td></tr>
+          </tbody></table></div>
+          <div class="two-facts"><p><strong>Mengapa Waktu-I lebih dulu?</strong><br>CPU harus mengambil dan menerjemahkan instruksi sebelum tahu apa yang perlu dieksekusi.</p><p><strong>Data masih tersedia di RAM?</strong><br>Tahap Fetching dan Executing paling diuntungkan karena data sudah siap di memori cepat.</p></div>
+        </section>
+
+        <section class="study-section" id="mr-algo" aria-labelledby="mr-algo-title">
+          <div class="section-kicker"><span>04</span><span>CONTOH LANGKAH PROGRAM</span></div>
+          <div class="section-title-row"><h2 id="mr-algo-title">Mr. Algo: 3 × 8 + 9</h2><span class="section-tag">HASIL = 33</span></div>
+          <p class="section-intro">Data awal berada di kotak 1 = 3, kotak 2 = 8, dan kotak 3 = 9. Nilai di register menjadi ruang kerja selama operasi berjalan.</p>
+          <div class="table-wrap"><table class="algo-table"><thead><tr><th scope="col">Langkah</th><th scope="col">Instruksi</th><th scope="col">Keterangan</th><th scope="col">Hasil</th></tr></thead><tbody>
+            <tr><th scope="row">1</th><td><code>LOAD kotak 1 → Register A</code></td><td>Ambil angka 3.</td><td><code>A = 3</code></td></tr>
+            <tr><th scope="row">2</th><td><code>LOAD kotak 2 → Register B</code></td><td>Ambil angka 8.</td><td><code>B = 8</code></td></tr>
+            <tr><th scope="row">3</th><td><code>MULTIPLY A × B</code></td><td>ALU mengalikan A dan B.</td><td><code>A = 24</code></td></tr>
+            <tr><th scope="row">4</th><td><code>LOAD kotak 3 → Register B</code></td><td>Ambil angka 9.</td><td><code>B = 9</code></td></tr>
+            <tr><th scope="row">5</th><td><code>ADD A + B</code></td><td>ALU menjumlahkan hasil.</td><td><code>A = 33</code></td></tr>
+            <tr><th scope="row">6</th><td><code>STORE A → kotak 4</code></td><td>Simpan hasil akhir.</td><td><code>kotak 4 = 33</code></td></tr>
+          </tbody></table></div>
+          <p class="teacher-note">Nama instruksi dan format kolom dapat berbeda mengikuti contoh dari guru; urutan logikanya tetap sama.</p>
+        </section>
+
+        <section class="study-section" id="sistem-operasi" aria-labelledby="sistem-operasi-title">
+          <div class="section-kicker"><span>05</span><span>PENGELOLA KOMPUTER</span></div>
+          <div class="section-title-row"><h2 id="sistem-operasi-title">Sistem Operasi</h2><span class="section-tag">OS ≠ APLIKASI</span></div>
+          <p class="section-intro"><strong>Operating System (OS)</strong> mengelola perangkat keras, menyediakan antarmuka pengguna, dan membantu komponen bekerja efisien. Game dan browser adalah aplikasi yang berjalan di atas OS, bukan OS itu sendiri.</p>
+          <div class="table-wrap"><table><thead><tr><th scope="col">Antarmuka</th><th scope="col">Cara berinteraksi</th><th scope="col">Keunggulan</th><th scope="col">Hal yang perlu diketahui</th></tr></thead><tbody>
+            <tr><th scope="row">GUI</th><td>Grafis, ikon, jendela, dan klik mouse.</td><td>Ramah pengguna dan mudah dipelajari.</td><td>Interaksi dilakukan lewat elemen visual.</td></tr>
+            <tr><th scope="row">CLI</th><td>Teks dan perintah yang diketik.</td><td>Cepat dan powerful untuk menjalankan perintah.</td><td>Perlu mengetahui atau menghafal perintah.</td></tr>
+          </tbody></table></div>
+        </section>
+
+        <section class="study-section" id="multitasking" aria-labelledby="multitasking-title">
+          <div class="section-kicker"><span>06</span><span>BANYAK PROSES, SATU CPU</span></div>
+          <div class="section-title-row"><h2 id="multitasking-title">Multitasking &amp; Round Robin</h2><span class="section-tag">FAIRNESS</span></div>
+          <p class="section-intro">OS harus membagi waktu CPU di antara proses seperti musik, browsing, dan game. CPU tetap mengerjakan satu proses pada satu waktu, tetapi pergantian yang sangat cepat membuatnya terasa berjalan bersamaan.</p>
+          <div class="term-grid">
+            <article><span>QUANTUM TIME</span><p>Jatah waktu maksimal CPU untuk satu giliran proses.</p></article>
+            <article><span>BURST TIME</span><p>Waktu eksekusi yang dibutuhkan suatu proses.</p></article>
+            <article><span>ARRIVAL TIME</span><p>Waktu ketika proses tiba dan masuk antrean.</p></article>
+          </div>
+          <div class="round-robin-flow" aria-label="Alur Round Robin"><span>Musik</span><i>→</i><span>Browsing</span><i>→</i><span>Game</span><i>↺</i><small>Jika belum selesai, proses kembali ke ujung antrean setelah quantum.</small></div>
+          <div class="two-facts"><p><strong>Round Robin</strong><br>Setiap proses mendapat jatah waktu sama dan bergiliran. Tujuannya fairness agar tidak ada proses yang diabaikan.</p><p><strong>First Come, First Served</strong><br>Jika game berdurasi panjang datang lebih dulu, musik dan browsing menunggu sampai game selesai. Sistem dapat terasa hang atau lambat.</p></div>
+        </section>
+
+        <section class="study-section" id="penyimpanan" aria-labelledby="penyimpanan-title">
+          <div class="section-kicker"><span>07</span><span>MEMORI &amp; PENYIMPANAN</span></div>
+          <div class="section-title-row"><h2 id="penyimpanan-title">RAM dibanding HDD / SSD</h2><span class="section-tag">PRIMARY vs SECONDARY</span></div>
+          <div class="table-wrap"><table><thead><tr><th scope="col">Aspek</th><th scope="col">RAM · Primary</th><th scope="col">HDD / SSD · Secondary</th></tr></thead><tbody>
+            <tr><th scope="row">Sifat data</th><td>Sementara (volatile); data hilang saat komputer mati.</td><td>Permanen; data tetap tersimpan saat komputer mati.</td></tr>
+            <tr><th scope="row">Kecepatan</th><td>Sangat cepat untuk akses CPU.</td><td>Lebih lambat dibanding RAM.</td></tr>
+            <tr><th scope="row">Kapasitas</th><td>Umumnya lebih kecil.</td><td>Umumnya lebih besar.</td></tr>
+            <tr><th scope="row">Peran</th><td>Meja kerja untuk data yang sedang dipakai CPU.</td><td>Gudang jangka panjang untuk data dan program.</td></tr>
+          </tbody></table></div>
+        </section>
+
+        <section class="study-section" id="kolaborasi" aria-labelledby="kolaborasi-title">
+          <div class="section-kicker"><span>08</span><span>SISTEM YANG BEKERJA BERSAMA</span></div>
+          <div class="section-title-row"><h2 id="kolaborasi-title">Kolaborasi sistem komputer</h2><span class="section-tag">INPUT → PROSES → OUTPUT</span></div>
+          <div class="component-grid collaboration-grid">
+            <article class="component-item"><span class="component-code">IoT</span><div><h3>Internet of Things</h3><p>Perangkat dan sensor terhubung internet untuk bertukar data. Contoh: sensor suhu gudang mengirim data ke server pusat.</p></div></article>
+            <article class="component-item"><span class="component-code">CLOUD</span><div><h3>Cloud computing</h3><p>Layanan komputasi dan penyimpanan yang diakses melalui internet.</p></div></article>
+            <article class="component-item"><span class="component-code">HPC</span><div><h3>Supercomputer</h3><p>Komputer berkemampuan sangat tinggi untuk simulasi besar, misalnya simulasi cuaca pada Sierra.</p></div></article>
+            <article class="component-item"><span class="component-code">I/O</span><div><h3>Interaksi manusia-komputer</h3><p>Mengetik melalui keyboard adalah tahap Input; komputer memproses data dan menampilkan hasil sebagai Output.</p></div></article>
+          </div>
+        </section>
+
+        <section class="study-section essay-tips" id="tips-essay" aria-labelledby="tips-title">
+          <div class="section-kicker"><span>09</span><span>PANDUAN MENJAWAB</span></div>
+          <div class="section-title-row"><h2 id="tips-title">Checklist esai</h2><span class="section-tag">JAWAB DENGAN JELAS</span></div>
+          <ul class="tips-list">
+            <li><strong>Soal 21 · GUI vs CLI</strong><span>Jelaskan perbedaan cara interaksi dan satu keunggulan spesifik dari masing-masing.</span></li>
+            <li><strong>Soal 22 · Empat tahap CPU</strong><span>Terangkan Fetch, Decode, Execute, Store; sebutkan komponen yang bekerja dan hasil tiap tahap.</span></li>
+            <li><strong>Soal 24 · RAM vs storage</strong><span>Fokus pada sifat penyimpanan (sementara atau permanen) serta peran masing-masing untuk CPU.</span></li>
+            <li><strong>Soal 25 · Multitasking</strong><span>Hubungkan satu CPU dengan banyak proses, quantum time, dan pergantian cepat yang menciptakan ilusi bersamaan.</span></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer summary-footer"><span>RUANGBELAJAR <span class="footer-dot">·</span> INFORMATIKA</span><a href="index.html">Kembali ke halaman ujian ↑</a></footer>
+  </div>
+</body>
+</html>

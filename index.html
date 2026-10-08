@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5ef">
+  <title>Sumatif Bab 4 | Sistem Komputer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      if (localStorage.getItem("ruang-ujian-theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Lewati ke isi utama</a>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Sumatif Bab 4">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>RUANG<span class="brand-light">UJIAN</span></span>
+      </a>
+      <div class="topbar-actions">
+        <div class="topbar-meta"><span class="live-dot"></span><span>INFORMATIKA</span><span class="meta-divider"></span><span>SUMATIF BAB 4</span></div>
+        <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Aktifkan mode gelap" title="Aktifkan mode gelap">
+          <span class="theme-switch-track" aria-hidden="true"><span></span></span>
+          <span>Tema gelap</span>
+        </button>
+      </div>
+    </header>
+    <div class="guard-notice" id="guard-notice" role="status" aria-live="polite" hidden>
+      <span class="guard-indicator" aria-hidden="true"></span>
+      <span id="guard-notice-text">Pengawasan aktif.</span>
+      <strong id="guard-count">0 / 3 pelanggaran</strong>
+    </div>
+
+    <main id="main-content" tabindex="-1">
+      <section class="screen active" id="login-screen" aria-labelledby="login-title">
+        <div class="login-layout">
+          <div class="intro-panel">
+            <p class="eyebrow"><span class="eyebrow-line"></span> ASESMEN AKHIR BAB</p>
+            <h1 id="login-title">Sistem<br><span>Komputer</span></h1>
+            <p class="intro-copy">Uji pemahamanmu tentang cara komputer berpikir, bekerja, dan berinteraksi.</p>
+            <div class="exam-stats">
+              <div><strong>60</strong><span>MENIT</span></div>
+              <i></i>
+              <div><strong>50</strong><span>POIN</span></div>
+              <i></i>
+              <div><strong>25</strong><span>SOAL</span></div>
+            </div>
+            <div class="orbit-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="chip"><span>CPU</span><i></i><i></i><i></i><i></i></div>
+              <span class="orbit-label label-a">INPUT</span><span class="orbit-label label-b">MEMORY</span><span class="orbit-label label-c">OUTPUT</span>
+            </div>
+          </div>
+          <div class="form-panel">
+            <div class="panel-heading"><span class="step-tag">Langkah 1 dari 2 · Identitas</span></div>
+            <h2>Masuk ke ujian</h2>
+            <p class="muted">Isi data diri sesuai identitas di kelas.</p>
+            <form id="login-form">
+              <label for="student-name">Nama lengkap <span>*</span></label>
+              <input id="student-name" name="name" type="text" placeholder="Contoh: Adi Pratama" autocomplete="name" required>
+              <label for="student-class">Kelas <span>*</span></label>
+              <input id="student-class" name="class" type="text" placeholder="Contoh: X-1" required>
+              <button class="button button-primary button-full" type="submit">Login <span aria-hidden="true">→</span></button>
+              <p class="form-note"><span aria-hidden="true">▣</span> Pastikan koneksi dan perangkatmu siap.</p>
+              <a class="study-link" href="ringkasan.html"><span aria-hidden="true">▤</span> Baca ringkasan materi <span aria-hidden="true">↗</span></a>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="rules-screen" aria-labelledby="rules-title" hidden>
+        <div class="content-wrap rules-wrap">
+          <p class="eyebrow"><span class="eyebrow-line"></span> SEBELUM MEMULAI</p>
+          <h1 id="rules-title">Aturan <span>ujian.</span></h1>
+          <p class="intro-copy">Luangkan satu menit untuk membaca ketentuan berikut.</p>
+          <div class="rules-list">
+            <article class="rule-row"><span class="rule-number">01</span><div><h3>Siapkan alat tulis</h3><p>Jawaban esai ditulis di kertas. Siapkan kertas kosong dan bolpoin masing-masing.</p></div><span class="rule-symbol">✳</span></article>
+            <article class="rule-row"><span class="rule-number">02</span><div><h3>Waktu pengerjaan 60 menit</h3><p>Penghitung waktu dimulai saat tombol mulai ditekan. Ujian terkirim otomatis saat waktu habis.</p></div><span class="rule-symbol">◷</span></article>
+            <article class="rule-row"><span class="rule-number">03</span><div><h3>Tanyakan kepada guru</h3><p>Jika ada pertanyaan atau kendala, silakan tanyakan langsung kepada guru.</p></div><span class="rule-symbol">↗</span></article>
+          </div>
+          <div class="rules-footer"><p>Masuk sebagai <strong id="rules-student"></strong></p><button class="button button-primary" id="start-exam">Mulai ujian <span aria-hidden="true">→</span></button></div>
+        </div>
+      </section>
+
+      <section class="screen exam-screen" id="exam-screen" aria-label="Lembar ujian" hidden>
+        <div class="exam-topline">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> SUMATIF BAB 4</p><h1>Lembar <span>ujian.</span></h1><p class="muted"><span id="exam-student"></span> <span class="class-separator">·</span> <span id="exam-class"></span></p></div>
+          <div class="timer-box" aria-live="polite"><span class="timer-label">SISA WAKTU</span><strong id="timer">60:00</strong></div>
+        </div>
+        <div class="exam-progress"><div class="progress-copy"><span>PILIHAN GANDA</span><span id="progress-label">0 / 20 dijawab</span></div><div class="progress-track"><span id="progress-bar"></span></div></div>
+        <div class="exam-layout">
+          <form id="exam-form">
+          <div class="question-section" id="mc-section"><div class="section-heading"><h2>Pilihan ganda</h2><span>01—20 <i>·</i> 50 poin</span></div><div id="mc-questions"></div></div>
+          <div class="question-section essay-section" id="essay-section"><div class="section-heading"><h2>Esai</h2><span>21—25 <i>·</i> Tulis di kertas</span></div><p class="essay-instruction">Tuliskan jawaban setiap soal pada kertas. Setelah selesai menulis, centang konfirmasi pada soal tersebut.</p><div id="essay-questions"></div></div>
+          <nav class="question-pager" aria-label="Pindah halaman soal">
+            <button class="button button-outline" id="previous-question" type="button"><span aria-hidden="true">←</span> Sebelumnya</button>
+            <span class="pager-position" id="question-position" aria-live="polite">Soal 01 dari 25</span>
+            <button class="button button-primary" id="next-question" type="button">Berikutnya <span aria-hidden="true">→</span></button>
+          </nav>
+          <div class="submit-row" id="final-submit-row" hidden><p><span class="required-mark">*</span> Centang konfirmasi untuk setiap jawaban esai sebelum dikirim.</p><button class="button button-dark" type="submit">Kumpulkan jawaban <span aria-hidden="true">↗</span></button></div>
+          </form>
+          <aside class="question-navigator" aria-label="Navigasi soal ujian">
+            <div class="navigator-toolbar"><button class="navigator-toggle" id="question-nav-toggle" type="button" aria-expanded="true" aria-controls="question-nav-panel"><span class="navigator-toggle-icon" aria-hidden="true">☷</span> Daftar soal <span class="navigator-count" id="navigator-count">0 / 25 terjawab</span><span class="navigator-chevron" aria-hidden="true">⌄</span></button></div>
+            <div class="question-nav-panel" id="question-nav-panel">
+              <div class="question-legend" aria-label="Keterangan status soal"><span><i class="legend-dot answered"></i> Sudah dijawab</span><span><i class="legend-dot unanswered"></i> Belum dijawab</span><span><i class="legend-dot doubtful"></i> Ragu-ragu</span></div>
+              <div id="question-map"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="screen result-screen" id="result-screen" aria-labelledby="result-title" hidden>
+        <div class="handover-banner"><div><span class="handover-kicker">LANGKAH BERIKUTNYA</span><strong>Serahkan lembar jawaban esai kepada guru.</strong><p>Pastikan nama dan kelas tertulis pada lembar jawabanmu.</p></div><span class="handover-icon" aria-hidden="true">↗</span></div>
+        <div class="result-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> UJIAN SELESAI</p><h1 id="result-title">Hasil <span>ujian.</span></h1><p class="muted"><span id="result-student"></span> <span class="class-separator">·</span> <span id="result-class"></span></p></div><div class="score-block"><span>NILAI PILIHAN GANDA</span><strong><span id="score">0</span><small> / 50</small></strong><span id="score-caption" class="score-caption"></span></div></div>
+        <div class="result-summary"><span id="correct-count">0 benar</span><span class="summary-divider"></span><span id="wrong-count">0 salah atau kosong</span></div>
+        <div class="review-heading"><h2>Pembahasan</h2><span>JAWABAN PILIHAN GANDA</span></div>
+        <div id="answer-review" class="answer-review"></div>
+        <div class="essay-receipt"><div><span class="receipt-mark">✓</span><div><strong>Konfirmasi esai tercatat</strong><p>Penilaian esai dilakukan oleh guru dari lembar jawaban tertulis.</p></div></div><button class="button button-outline" id="print-result" type="button"><span aria-hidden="true">▤</span> Cetak hasil</button></div>
+        <div class="result-actions"><button class="button button-primary" id="back-to-login" type="button"><span aria-hidden="true">←</span> Kembali ke login</button></div>
+      </section>
+
+      <section class="screen lockout-screen" id="lockout-screen" aria-labelledby="lockout-title" hidden>
+        <div class="lockout-content">
+          <span class="lockout-mark" aria-hidden="true">!</span>
+          <p class="eyebrow"><span class="eyebrow-line"></span> AKSES UJIAN DIHENTIKAN</p>
+          <h1 id="lockout-title">Ujian <span>dikunci.</span></h1>
+          <p id="lockout-message">Batas tiga pelanggaran telah tercapai. Ujian tidak dapat dibuka lagi di browser ini.</p>
+          <p class="lockout-help">Silakan hubungi guru untuk mendapatkan bantuan.</p>
+          <button class="button button-outline teacher-unlock-button" id="open-teacher-unlock" type="button">Keluar / buka kunci guru</button>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>RUANGUJIAN <span class="footer-dot">·</span> INFORMATIKA</span><span>SUMATIF BAB 4 / SISTEM KOMPUTER</span></footer>
+  </div>
+  <dialog id="confirm-dialog" class="confirm-dialog">
+    <form method="dialog"><span class="step-tag">KONFIRMASI</span><h2>Kumpulkan jawaban?</h2><p id="confirm-message">Pastikan semua jawaban sudah terisi.</p><div class="dialog-actions"><button class="button button-outline" value="cancel">Periksa lagi</button><button class="button button-dark" id="confirm-submit" value="submit">Kumpulkan</button></div></form>
+  </dialog>
+  <dialog id="violation-dialog" class="confirm-dialog violation-dialog" aria-labelledby="violation-title">
+    <div><span class="step-tag" id="violation-count">PERINGATAN 1 DARI 3</span><h2 id="violation-title">Tetap di halaman ujian</h2><p id="violation-message">Pelanggaran tercatat.</p><p class="violation-instruction">Kembali ke layar penuh untuk melanjutkan ujian.</p><p class="violation-error" id="fullscreen-error" hidden>Browser tidak dapat membuka layar penuh. Coba tekan tombol kembali sekali lagi.</p><div class="dialog-actions"><button class="button button-dark" id="resume-exam" type="button">Kembali ke ujian</button></div></div>
+  </dialog>
+  <dialog id="teacher-unlock-dialog" class="confirm-dialog teacher-unlock-dialog" aria-labelledby="teacher-unlock-title">
+    <form id="teacher-unlock-form">
+      <span class="step-tag">AKSES KHUSUS GURU</span>
+      <h2 id="teacher-unlock-title">Buka kunci ujian</h2>
+      <p>Masukkan kata sandi guru untuk menghapus kunci pada browser ini.</p>
+      <label for="teacher-password">Kata sandi guru</label>
+      <input id="teacher-password" name="password" type="password" autocomplete="current-password" required>
+      <p class="unlock-error" id="teacher-unlock-error" role="alert" hidden>Kata sandi tidak sesuai. Silakan coba lagi.</p>
+      <div class="dialog-actions"><button class="button button-outline" id="cancel-teacher-unlock" type="button">Batal</button><button class="button button-dark" type="submit">Buka kunci</button></div>
+    </form>
+  </dialog>
+</body>
+</html>
