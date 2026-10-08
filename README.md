@@ -48,4 +48,4 @@ Jawaban esai dinilai oleh guru dari lembar jawaban tertulis. Hasil pilihan ganda
 
 ## Lisensi
 
-Belum ditentukan.
+2026.
