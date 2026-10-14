@@ -20,7 +20,7 @@ Tidak perlu instalasi paket. Buka `index.html` di browser atau jalankan folder i
 1. Buka `index.html`.
 2. Isi nama dan kelas.
 3. Baca aturan, lalu pilih **Mulai ujian**.
-4. Untuk belajar sebelum ujian, pilih **Baca ringkasan materi** pada halaman login.
+4. Untuk belajar sebelum ujian, pilih **Baca ringkasan materi** pada halaman login. Halaman materi tersedia terpisah di `/ringkasan/`.
 
 ## Struktur Proyek
 
@@ -29,7 +29,7 @@ Tidak perlu instalasi paket. Buka `index.html` di browser atau jalankan folder i
 | `index.html` | Halaman CBT dan alur ujian |
 | `styles.css` | Tampilan CBT, responsif, dan tema |
 | `app.js` | Bank soal, timer, navigasi, penilaian, dan pengawasan browser |
-| `ringkasan.html` | Halaman ringkasan materi Sistem Komputer |
+| `ringkasan/index.html` | Halaman ringkasan materi Sistem Komputer, terpisah dari halaman ujian |
 | `ringkasan.css` | Tampilan halaman ringkasan |
 | `ringkasan.js` | Tema dan fungsi cetak ringkasan |
 
