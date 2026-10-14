@@ -365,6 +365,14 @@ function submitExam(fromTimer = false) {
   showScreen("result-screen");
 }
 
+const examTokenInput = document.querySelector("#exam-token");
+const examTokenError = document.querySelector("#token-error");
+
+examTokenInput.addEventListener("input", () => {
+  examTokenError.hidden = true;
+  examTokenInput.removeAttribute("aria-invalid");
+});
+
 document.querySelector("#login-form").addEventListener("submit", event => {
   event.preventDefault();
   if (isExamLocked()) {
@@ -372,6 +380,14 @@ document.querySelector("#login-form").addEventListener("submit", event => {
     return;
   }
   const formData = new FormData(event.currentTarget);
+  if (String(formData.get("token")).trim() !== "MSRF04") {
+    examTokenError.hidden = false;
+    examTokenInput.setAttribute("aria-invalid", "true");
+    examTokenInput.focus();
+    return;
+  }
+  examTokenError.hidden = true;
+  examTokenInput.removeAttribute("aria-invalid");
   student.name = String(formData.get("name")).trim();
   student.className = String(formData.get("class")).trim();
   document.querySelector("#rules-student").textContent = `${student.name} · ${student.className}`;
@@ -442,6 +458,8 @@ document.querySelector("#confirm-dialog").addEventListener("close", event => {
 
 document.querySelector("#print-result").addEventListener("click", () => window.print());
 document.querySelector("#back-to-login").addEventListener("click", () => window.location.reload());
+document.querySelector("#open-followup").addEventListener("click", () => showScreen("followup-screen"));
+document.querySelector("#back-to-results").addEventListener("click", () => showScreen("result-screen"));
 
 document.querySelector("#open-teacher-unlock").addEventListener("click", () => {
   const passwordInput = document.querySelector("#teacher-password");

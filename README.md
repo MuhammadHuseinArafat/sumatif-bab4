@@ -9,8 +9,10 @@ Aplikasi Computer-Based Test (CBT) sederhana untuk asesmen Informatika Bab 4: **
 - Lima soal esai yang dikerjakan di kertas, dengan checkbox konfirmasi per soal.
 - Timer 60 menit, navigasi satu soal per halaman, serta peta status: sudah dijawab, belum dijawab, dan ragu-ragu.
 - Penilaian otomatis pilihan ganda dengan kunci dan pembahasan setelah pengumpulan.
+- Halaman lanjutan menyediakan unduhan lembar remedial dan pengayaan; guru menentukan lembar yang harus dikerjakan siswa.
 - Tema terang/gelap dengan preferensi yang disimpan di browser.
 - Pengawasan browser best-effort: fullscreen, peringatan pelanggaran, dan lockout setelah tiga strike.
+- Login siswa memerlukan token akses `MSRF04`.
 - Halaman ringkasan materi dengan tabel, contoh langkah Mr. Algo, tips esai, dan opsi cetak.
 
 ## Cara Menjalankan
@@ -18,9 +20,9 @@ Aplikasi Computer-Based Test (CBT) sederhana untuk asesmen Informatika Bab 4: **
 Tidak perlu instalasi paket. Buka `index.html` di browser atau jalankan folder ini menggunakan ekstensi **Live Server** di VS Code.
 
 1. Buka `index.html`.
-2. Isi nama dan kelas.
-3. Baca aturan, lalu pilih **Mulai ujian**.
-4. Untuk belajar sebelum ujian, pilih **Baca ringkasan materi** pada halaman login. Halaman materi tersedia terpisah di `/ringkasan/`.
+2. Isi nama, kelas, dan token `MSRF04`, lalu pilih **Login**.
+3. Setelah ujian, buka **Halaman lanjutan** dan unduh lembar kerja sesuai arahan guru.
+4. Untuk belajar, buka `ringkasan.html`.
 
 ## Struktur Proyek
 
@@ -28,10 +30,12 @@ Tidak perlu instalasi paket. Buka `index.html` di browser atau jalankan folder i
 | --- | --- |
 | `index.html` | Halaman CBT dan alur ujian |
 | `styles.css` | Tampilan CBT, responsif, dan tema |
-| `app.js` | Bank soal, timer, navigasi, penilaian, dan pengawasan browser |
-| `ringkasan/index.html` | Halaman ringkasan materi Sistem Komputer, terpisah dari halaman ujian |
+| `app.js` | Bank soal, timer, navigasi, penilaian, pengawasan, dan validasi token |
+| `ringkasan.html` | Halaman ringkasan materi Sistem Komputer |
 | `ringkasan.css` | Tampilan halaman ringkasan |
 | `ringkasan.js` | Tema dan fungsi cetak ringkasan |
+| `LEMBAR KERJA REMEDIAL — INFORMATIKA KELAS 10.docx` | Lembar kerja remedial |
+| `LEMBAR KERJA PENGAYAAN — INFORMATIKA KELAS 10 .docx` | Lembar kerja pengayaan |
 
 ## Teknologi
 

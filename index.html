@@ -69,9 +69,12 @@
               <input id="student-name" name="name" type="text" placeholder="Contoh: Adi Pratama" autocomplete="name" required>
               <label for="student-class">Kelas <span>*</span></label>
               <input id="student-class" name="class" type="text" placeholder="Contoh: X-1" required>
+              <label for="exam-token">Token ujian <span>*</span></label>
+              <input id="exam-token" name="token" type="password" autocomplete="off" minlength="6" maxlength="6" aria-describedby="token-error" required>
+              <p class="token-error" id="token-error" role="alert" hidden>Token tidak sesuai. Periksa kembali token dari guru.</p>
               <button class="button button-primary button-full" type="submit">Login <span aria-hidden="true">→</span></button>
               <p class="form-note"><span aria-hidden="true">▣</span> Pastikan koneksi dan perangkatmu siap.</p>
-              <a class="study-link" href="ringkasan/"><span aria-hidden="true">▤</span> Baca ringkasan materi <span aria-hidden="true">↗</span></a>
+              <a class="study-link" href="ringkasan.html"><span aria-hidden="true">▤</span> Baca ringkasan materi <span aria-hidden="true">↗</span></a>
             </form>
           </div>
         </div>
@@ -125,7 +128,26 @@
         <div class="review-heading"><h2>Pembahasan</h2><span>JAWABAN PILIHAN GANDA</span></div>
         <div id="answer-review" class="answer-review"></div>
         <div class="essay-receipt"><div><span class="receipt-mark">✓</span><div><strong>Konfirmasi esai tercatat</strong><p>Penilaian esai dilakukan oleh guru dari lembar jawaban tertulis.</p></div></div><button class="button button-outline" id="print-result" type="button"><span aria-hidden="true">▤</span> Cetak hasil</button></div>
-        <div class="result-actions"><button class="button button-primary" id="back-to-login" type="button"><span aria-hidden="true">←</span> Kembali ke login</button></div>
+        <div class="result-actions"><button class="button button-outline" id="back-to-login" type="button"><span aria-hidden="true">←</span> Kembali ke login</button><button class="button button-primary" id="open-followup" type="button">Halaman lanjutan <span aria-hidden="true">→</span></button></div>
+      </section>
+
+      <section class="screen followup-screen" id="followup-screen" aria-labelledby="followup-title" hidden>
+        <div class="content-wrap followup-wrap">
+          <p class="eyebrow"><span class="eyebrow-line"></span> LANGKAH LANJUTAN</p>
+          <h1 id="followup-title">Lembar <span>kerja.</span></h1>
+          <p class="followup-copy">Silakan unduh lembar kerja sesuai arahan guru. Penentuan remedial atau pengayaan dilakukan oleh guru.</p>
+          <div class="followup-downloads">
+            <article class="followup-download remedial-download">
+              <div><span class="followup-label">LEMBAR KERJA</span><h2>Remedial</h2><p>Unduh lembar remedial jika diarahkan oleh guru.</p></div>
+              <a class="button button-primary" href="LEMBAR%20KERJA%20REMEDIAL%20%E2%80%94%20INFORMATIKA%20KELAS%2010.docx" download="Lembar-Kerja-Remedial.docx"><span aria-hidden="true">↓</span> Unduh lembar remedial</a>
+            </article>
+            <article class="followup-download enrichment-download">
+              <div><span class="followup-label">LEMBAR KERJA</span><h2>Pengayaan</h2><p>Unduh lembar pengayaan jika diarahkan oleh guru.</p></div>
+              <a class="button button-primary" href="LEMBAR%20KERJA%20PENGAYAAN%20%E2%80%94%20INFORMATIKA%20KELAS%2010%20.docx" download="Lembar-Kerja-Pengayaan.docx"><span aria-hidden="true">↓</span> Unduh lembar pengayaan</a>
+            </article>
+          </div>
+          <div class="followup-actions"><button class="button button-outline" id="back-to-results" type="button"><span aria-hidden="true">←</span> Kembali ke hasil</button></div>
+        </div>
       </section>
 
       <section class="screen lockout-screen" id="lockout-screen" aria-labelledby="lockout-title" hidden>
